@@ -2,11 +2,11 @@
 
 ## Application for Accessing Secrets via Azure App Configuration
 
-This application connects with Azure App Configuration and retrieves key-value references. These references allow the application to fetch secrets stored in Azure Key Vaults that they are referenced from.
+This application connects with Azure App Configuration and retrieves key-value references. These references allow the application to fetch secrets from which they are referenced in Azure Key Vaults.
 
 ### App Configuration
 
-The application uses Azure App Configuration to manage configuration settings, including references to secrets stored in Azure Key Vault. Here’s an example of how the App Configuration is set up:
+The application uses Azure App Configuration to manage configuration settings, including references to secrets stored in Azure Key Vault. Here’s a snapshot of how the App Configuration is set up:
 
 ![App Configuration](https://github.com/user-attachments/assets/93845d6e-d7aa-40f6-8a21-cbe522404e70)
 
