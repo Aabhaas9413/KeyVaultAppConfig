@@ -29,9 +29,7 @@ The secrets referenced in Azure App Configuration are securely stored in Azure K
 3. **Secret Access:**
    - The application retrieves secrets from Azure Key Vault via the references defined in Azure App Configuration.
 
-### Example Code
 
-Here’s an example of how to set up and use Azure App Configuration and Azure Key Vault in a .NET Core application:
 
 **Install the necessary NuGet packages:**
 ```bash
