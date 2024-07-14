@@ -5,13 +5,13 @@
 This application connects with Azure App Configuration and retrieves key-value references. These references allow the application to fetch secrets from which they are referenced in Azure Key Vaults.
 
 ### App Configuration
-
+(Need App Configuration Data Reader RBAC)
 The application uses Azure App Configuration to manage configuration settings, including references to secrets stored in Azure Key Vault. Here’s a snapshot of how the App Configuration is set up:
 
 ![App Configuration](https://github.com/user-attachments/assets/93845d6e-d7aa-40f6-8a21-cbe522404e70)
 
 ### Key Vault
-
+(Need Key Vault Secrets Officer RBAC)
 The secrets referenced in Azure App Configuration are securely stored in Azure Key Vault. Here’s a snapshot of the Key Vault setup:
 
 ![Key Vault](https://github.com/user-attachments/assets/cacfcd96-7024-4514-95b2-e33909a983ce)
@@ -35,7 +35,7 @@ The secrets referenced in Azure App Configuration are securely stored in Azure K
 ```bash
 dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration
 dotnet add package Azure.Identity
-
+```
 
 **Refresh app config specific keys:**
 The options.ConfigureRefresh method in Azure App Configuration is used to set up automatic refresh of configuration values. This allows your application to periodically check for and apply updates to specific configuration keys without requiring a restart.
