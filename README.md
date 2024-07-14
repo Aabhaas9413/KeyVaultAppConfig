@@ -36,3 +36,24 @@ The secrets referenced in Azure App Configuration are securely stored in Azure K
 dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration
 dotnet add package Azure.Identity
 
+
+**Refresh app config specific keys:**
+The options.ConfigureRefresh method in Azure App Configuration is used to set up automatic refresh of configuration values. This allows your application to periodically check for and apply updates to specific configuration keys without requiring a restart.
+
+### Example Calculation
+
+Assume you have one instance of your application.
+Each minute, it makes one request to check the `TestApp:Settings:UseSampleKey` value.
+This totals to:
+1 request per minute × 60 minutes per hour × 24 hours per day = 1,440 requests per day.
+
+For a month (~30 days), this would be:
+
+1,440 requests/day × 30 days = 43,200 requests per month.
+
+Given the Azure App Configuration pricing (as of my last knowledge update in July 2023):
+
+**Standard Tier Pricing**: $1.50 per 100,000 requests.
+
+**Cost for 43,200 requests per month**:
+(43,200 / 100,000) × 1.50 = $0.648 per month per instance.

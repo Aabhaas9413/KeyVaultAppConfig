@@ -1,4 +1,5 @@
 using Azure.Identity;
+using System.Reflection.Emit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,8 +20,14 @@ builder.Configuration.AddAzureAppConfiguration(options =>
            {
                kv.SetCredential(new DefaultAzureCredential());
            });
+   // Register refresh for a specific key
+   options.ConfigureRefresh(refreshOptions =>
+   {
+       refreshOptions.Register("TestApp:Settings:UseSampleKey")
+                     .SetCacheExpiration(TimeSpan.FromMinutes(1));
+   });
 });
-
+builder.Services.AddAzureAppConfiguration();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
